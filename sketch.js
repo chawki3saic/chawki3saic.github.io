@@ -5,11 +5,11 @@ let triY;
 
 function setup() {
   // create the canvas element
-  createCanvas(900,500);
+  createCanvas(windowWidth,windowHeight);
 
   //giving pointX a value of 300
-  pointX = 600
-  triY = 300
+  pointX = 600;
+  triY = 300;
   rectMode(CENTER);
 
 
@@ -17,7 +17,7 @@ function setup() {
   //put starting point in center instead of shape
   // must end all commands with ";" to complete the tasks within each section
 } //{} ends/starts each section/main setup
- //caps is important
+ //everything is case sensitive
 
 function draw() {
   mouseDist = dist (mouseX, mouseY, pmouseX, pmouseY);
@@ -59,11 +59,18 @@ if(mouseIsPressed){
   pointX = 600;
 }
 if(keyIsPressed){
+
   //when key is pressed reset pointx to 200
   triY = 600;
 } else
 //when key is released reset point to 600
 {
   triY = 300;
+
 }
+}
+function keyTyped(){
+  if(key === 's'){
+    save("sketch1.png")
+  }
 }
